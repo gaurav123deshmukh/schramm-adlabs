@@ -1,4 +1,126 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <title>Schramm Ad Labs | Premium Digital Marketing Agency</title>
+    
+    <!-- Google Fonts for Premium Tech Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Light Theme Preloader -->
+    <div id="preloader">
+        <div class="loader-ring"></div>
+        <div style="margin-top: 20px; font-family: 'Rajdhani', sans-serif; font-weight: 700; color: var(--primary-blue); letter-spacing: 2px;">INITIALIZING_</div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">
+                <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
+            </a>
+            <ul class="nav-links">
+                <!-- Added data-text for the rolling text hover animation -->
+                <li><a href="index.html" data-text="Home">Home</a></li>
+                <li><a href="services.html" data-text="Services">Services</a></li>
+                <li><a href="portfolio.html" data-text="Portfolio">Portfolio</a></li>
+                <li><a href="about.html" data-text="About">About</a></li>
+            </ul>
+            <a href="contact.html" class="btn-primary">
+                Get a Quote <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-orb"></div>
+        <div class="container">
+            <h1 class="reveal">Transforming Ideas Into <span>Digital Reality</span></h1>
+            <!-- Added id for the typewriter JS effect. Left empty on purpose! -->
+            <p id="typewriter-text"></p>
+            <a href="services.html" class="btn-primary reveal" style="transition-delay: 0.3s;">
+                Explore Systems <i class="fa-solid fa-microchip"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our Expertise</h2>
+                <p style="margin-top: 15px; color: var(--text-light);">ROI-Driven Growth strategies tailored to your unique business needs.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Added "reveal" class for scroll-in animations -->
+                <div class="service-card reveal">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Search Engine Optimization</h3>
+                    <p>Drive organic traffic with our advanced keyword optimization, backlink building, and technical SEO indexing strategies.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay: 0.2s;">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <h3>Digital Marketing Strategy</h3>
+                    <p>Comprehensive communication campaigns that seamlessly align with your brand's overarching marketing goals.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay: 0.4s;">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>Web & Content Development</h3>
+                    <p>Clever, skillful developers ensuring the creation of state-of-the-art web-based products optimized for conversions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Light Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo reveal">
+                    <a href="index.html">
+                        <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
+                    </a>
+                    <p style="color: var(--text-light); margin-top: 10px;">Your trusted partner for transformative digital growth.</p>
+                </div>
+                <div class="footer-links reveal" style="transition-delay: 0.2s;">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">SEO Optimization</a></li>
+                        <li><a href="services.html">PPC Management</a></li>
+                        <li><a href="services.html">Social Media Marketing</a></li>
+                        <li><a href="services.html">Web Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links reveal" style="transition-delay: 0.4s;">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Schramm Ad Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
