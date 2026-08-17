@@ -4,32 +4,29 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
-    <title>Schramm Ad Labs | High-Tech Digital Agency</title>
+    <title>Schramm Ad Labs | Premium Digital Marketing Agency</title>
     <meta name="description" content="Grow your business with Schramm Ad Labs, a premium digital marketing agency offering SEO, PPC, social media marketing, and performance-driven strategies.">
     
-    <!-- Google Fonts for Premium & High-Tech Typography -->
+    <!-- Google Fonts for Premium Typography (Inter + Rajdhani for tech feel) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Rajdhani:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
 
     <style>
-        /* =========================================
-           CSS Variables - High Tech / Cyber Theme
-           ========================================= */
+        /* CSS Variables - High Tech Light Theme */
         :root {
             --primary-blue: #0973BA; /* Extracted from the logo */
-            --neon-cyan: #00e5ff;
-            --bg-dark: #050508;
-            --bg-glass: rgba(10, 15, 30, 0.65);
-            --text-light: #e0e6ed;
-            --white: #ffffff;
+            --tech-accent: #00d0ff;
+            --text-dark: #1A1A1A;
+            --text-light: #5A5A5A;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --border-light: rgba(9, 115, 186, 0.15);
             --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* =========================================
-           Global Reset & High-Tech Background
-           ========================================= */
+        /* Global Reset & High-Tech Light Background */
         * {
             margin: 0;
             padding: 0;
@@ -38,21 +35,20 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-light);
-            background-color: var(--bg-dark);
-            /* Futuristic Grid Background */
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            /* Subtle Light Tech Grid */
             background-image: 
-                linear-gradient(rgba(9, 115, 186, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(9, 115, 186, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(9, 115, 186, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(9, 115, 186, 0.03) 1px, transparent 1px);
             background-size: 40px 40px;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .nav-links a, .btn-primary {
+        h1, h2, h3 {
             font-family: 'Rajdhani', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         a {
@@ -66,16 +62,14 @@
             padding: 0 20px;
         }
 
-        /* =========================================
-           Pre-Loader Animations
-           ========================================= */
+        /* Pre-Loader Animations */
         #preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: var(--bg-dark);
+            background-color: var(--white);
             z-index: 9999;
             display: flex;
             justify-content: center;
@@ -88,10 +82,10 @@
             height: 100px;
             border-radius: 50%;
             border: 3px solid transparent;
-            border-top-color: var(--neon-cyan);
-            border-bottom-color: var(--primary-blue);
+            border-top-color: var(--primary-blue);
+            border-bottom-color: var(--tech-accent);
             animation: spin 1.5s linear infinite;
-            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+            box-shadow: 0 0 20px rgba(9, 115, 186, 0.1);
         }
 
         .loader-ring::before {
@@ -100,7 +94,7 @@
             top: 10px; left: 10px; right: 10px; bottom: 10px;
             border-radius: 50%;
             border: 3px solid transparent;
-            border-left-color: var(--neon-cyan);
+            border-left-color: var(--primary-blue);
             animation: spin 1s linear infinite reverse;
         }
 
@@ -114,19 +108,17 @@
             animation: fadeInUp 1s ease forwards 0.2s;
         }
 
-        /* =========================================
-           Header & Glassmorphism Navigation
-           ========================================= */
+        /* Header & Light Glassmorphism Navigation */
         header {
-            background: rgba(5, 5, 8, 0.85);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(15px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(9, 115, 186, 0.3);
+            border-bottom: 1px solid var(--border-light);
             padding: 15px 0;
-            box-shadow: 0 0 20px rgba(9, 115, 186, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
         }
 
         .nav-wrapper {
@@ -137,8 +129,13 @@
 
         .logo img {
             max-height: 60px;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
-            animation: pulseGlow 3s infinite alternate;
+            width: auto;
+            transition: var(--transition);
+        }
+        
+        .logo img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 10px rgba(9, 115, 186, 0.2));
         }
 
         .nav-links {
@@ -148,9 +145,11 @@
         }
 
         .nav-links a {
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
             font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-light);
+            font-size: 1.05rem;
+            color: var(--text-dark);
             transition: var(--transition);
             position: relative;
         }
@@ -162,96 +161,100 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: var(--neon-cyan);
+            background-color: var(--primary-blue);
             transition: var(--transition);
-            box-shadow: 0 0 10px var(--neon-cyan);
         }
 
         .nav-links a:hover {
-            color: var(--neon-cyan);
-            text-shadow: 0 0 8px var(--neon-cyan);
+            color: var(--primary-blue);
         }
 
         .nav-links a:hover::after {
             width: 100%;
         }
 
-        /* =========================================
-           High-Tech Buttons
-           ========================================= */
+        /* Animated Tech Button */
         .btn-primary {
-            background: transparent;
-            color: var(--neon-cyan);
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            background: var(--primary-blue);
+            color: var(--white);
             padding: 12px 28px;
             font-weight: 700;
             display: inline-block;
             transition: var(--transition);
-            border: 1px solid var(--neon-cyan);
-            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), inset 0 0 10px rgba(0, 229, 255, 0.1);
+            border: 1px solid var(--primary-blue);
+            box-shadow: 0 10px 20px rgba(9, 115, 186, 0.2);
             position: relative;
             overflow: hidden;
             clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
         }
 
         .btn-primary:hover {
-            background: var(--neon-cyan);
-            color: var(--bg-dark);
-            box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 10px var(--white);
-            transform: translateY(-2px);
+            background: transparent;
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(9, 115, 186, 0.3);
         }
 
-        /* =========================================
-           Hero Section
-           ========================================= */
+        /* Hero Section with Animations */
         .hero {
-            padding: 220px 0 120px;
+            padding: 200px 0 120px;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.9) 0%, var(--bg-light) 100%);
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
+        /* Rotating Background Element */
         .hero::before {
             content: '';
             position: absolute;
-            top: 20%;
+            top: -20%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(9, 115, 186, 0.15) 0%, transparent 70%);
-            z-index: -1;
-            animation: pulseGlow 4s infinite alternate;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: conic-gradient(from 0deg, transparent, rgba(9, 115, 186, 0.05), transparent);
+            border-radius: 50%;
+            animation: spin 20s linear infinite;
+            z-index: 0;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
             font-size: 4.5rem;
             font-weight: 800;
             margin-bottom: 20px;
-            color: var(--white);
+            color: var(--text-dark);
             line-height: 1.1;
-            text-shadow: 0 0 20px rgba(255,255,255,0.3);
             animation: slideInDown 1s ease forwards 0.3s;
             opacity: 0;
         }
 
         .hero h1 span {
-            color: var(--neon-cyan);
-            text-shadow: 0 0 20px var(--neon-cyan);
+            color: var(--primary-blue);
+            text-shadow: 0 0 20px rgba(9, 115, 186, 0.15);
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: #aebacd;
+            color: var(--text-light);
             max-width: 650px;
             margin: 0 auto 40px;
             animation: fadeInUp 1s ease forwards 0.6s;
             opacity: 0;
         }
 
-        /* =========================================
-           Animated Services Grid
-           ========================================= */
+        /* Services Grid with Tech Hover Effects */
         .services {
-            padding: 80px 0 120px;
+            padding: 100px 0;
+            background-color: var(--white);
+            border-top: 1px solid var(--border-light);
         }
 
         .section-header {
@@ -262,21 +265,20 @@
         .section-header h2 {
             font-size: 3rem;
             font-weight: 800;
-            color: var(--white);
-            text-shadow: 0 0 15px rgba(255,255,255,0.2);
+            color: var(--text-dark);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
 
         .service-card {
-            background: var(--bg-glass);
+            background: var(--white);
             padding: 40px;
-            border: 1px solid rgba(9, 115, 186, 0.3);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-light);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -284,11 +286,12 @@
             animation: fadeInUp 1s ease forwards 0.8s;
         }
 
+        /* Tech Corner Accents */
         .service-card::before, .service-card::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             border: 2px solid transparent;
             transition: var(--transition);
         }
@@ -306,23 +309,22 @@
         }
 
         .service-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15), inset 0 0 20px rgba(0, 229, 255, 0.05);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(9, 115, 186, 0.08);
+            border-color: rgba(9, 115, 186, 0.3);
         }
 
         .service-card:hover::before, .service-card:hover::after {
-            border-color: var(--neon-cyan);
             width: 100%;
             height: 100%;
-            opacity: 0.2;
+            opacity: 0.1;
+            border-color: var(--primary-blue);
         }
 
         .service-card i {
-            font-size: 3rem;
-            color: var(--neon-cyan);
+            font-size: 2.5rem;
+            color: var(--primary-blue);
             margin-bottom: 20px;
-            text-shadow: 0 0 15px var(--neon-cyan);
             transition: var(--transition);
         }
 
@@ -334,12 +336,10 @@
             font-size: 1.5rem;
             margin-bottom: 15px;
             font-weight: 700;
-            color: var(--white);
+            color: var(--text-dark);
         }
 
-        /* =========================================
-           Global Animations
-           ========================================= */
+        /* Global Keyframes */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
@@ -350,17 +350,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes pulseGlow {
-            from { opacity: 0.6; filter: brightness(1); }
-            to { opacity: 1; filter: brightness(1.3); }
-        }
-
-        /* =========================================
-           Footer
-           ========================================= */
+        /* Light Theme Footer */
         footer {
-            background: #020203;
-            border-top: 1px solid rgba(9, 115, 186, 0.3);
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-light);
             padding: 60px 0 30px;
         }
 
@@ -373,14 +366,15 @@
 
         .footer-logo img {
             max-height: 50px;
-            filter: brightness(0) invert(1);
             margin-bottom: 20px;
         }
 
         .footer-links h4 {
+            font-family: 'Rajdhani', sans-serif;
             font-size: 1.2rem;
             margin-bottom: 20px;
-            color: var(--neon-cyan);
+            color: var(--primary-blue);
+            text-transform: uppercase;
         }
 
         .footer-links ul {
@@ -392,23 +386,20 @@
         }
 
         .footer-links ul li a {
-            color: #aebacd;
+            color: var(--text-light);
             transition: var(--transition);
-            font-family: 'Rajdhani', sans-serif;
-            letter-spacing: 1px;
-            text-transform: uppercase;
         }
 
         .footer-links ul li a:hover {
-            color: var(--neon-cyan);
-            text-shadow: 0 0 5px var(--neon-cyan);
+            color: var(--primary-blue);
+            padding-left: 5px;
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px dashed rgba(255,255,255,0.1);
-            color: #555;
+            border-top: 1px dashed var(--border-light);
+            color: var(--text-light);
             font-size: 0.9rem;
         }
 
@@ -422,14 +413,13 @@
 </head>
 <body>
 
-    <!-- Preloader -->
+    <!-- Light Theme Preloader -->
     <div id="preloader">
         <div class="loader-ring"></div>
     </div>
 
     <!-- Wrapped Content for Entrance Animation -->
     <div class="loaded-content">
-        
         <!-- Header / Navigation -->
         <header>
             <div class="container nav-wrapper">
@@ -437,10 +427,10 @@
                     <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#">System.Home</a></li>
-                    <li><a href="#services">Modules.Services</a></li>
-                    <li><a href="#">Data.Portfolio</a></li>
-                    <li><a href="#">Core.About</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">About</a></li>
                 </ul>
                 <a href="#contact" class="btn-primary">Get a Quote</a>
             </div>
@@ -460,7 +450,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Our Expertise</h2>
-                    <p style="color: #aebacd;">ROI-Driven Growth strategies tailored to your unique business needs.</p>
+                    <p>ROI-Driven Growth strategies tailored to your unique business needs.</p>
                 </div>
                 <div class="services-grid">
                     <div class="service-card" style="animation-delay: 0.6s;">
@@ -482,13 +472,13 @@
             </div>
         </section>
 
-        <!-- Footer -->
+        <!-- Light Footer -->
         <footer>
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-logo">
                         <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
-                        <p style="margin-top: 15px; color: #aebacd;">Your trusted partner for transformative digital growth.</p>
+                        <p style="color: var(--text-light); margin-top: 10px;">Your trusted partner for transformative digital growth.</p>
                     </div>
                     <div class="footer-links">
                         <h4>Services</h4>
@@ -514,7 +504,6 @@
                 </div>
             </div>
         </footer>
-
     </div>
 
     <!-- JavaScript to Handle Preloader -->
