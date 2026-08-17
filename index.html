@@ -4,28 +4,32 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
-    <title>Schramm Ad Labs | Premium Digital Marketing Agency</title>
+    <title>Schramm Ad Labs | High-Tech Digital Agency</title>
     <meta name="description" content="Grow your business with Schramm Ad Labs, a premium digital marketing agency offering SEO, PPC, social media marketing, and performance-driven strategies.">
     
-    <!-- Google Fonts for Premium Typography -->
+    <!-- Google Fonts for Premium & High-Tech Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Rajdhani:wght@500;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
 
     <style>
-        /* CSS Variables based on Schramm Ad Labs Logo */
+        /* =========================================
+           CSS Variables - High Tech / Cyber Theme
+           ========================================= */
         :root {
             --primary-blue: #0973BA; /* Extracted from the logo */
-            --dark-blue: #064f82;
-            --text-dark: #1A1A1A;
-            --text-light: #5A5A5A;
-            --bg-light: #F8F9FA;
-            --white: #FFFFFF;
-            --transition: all 0.3s ease;
+            --neon-cyan: #00e5ff;
+            --bg-dark: #050508;
+            --bg-glass: rgba(10, 15, 30, 0.65);
+            --text-light: #e0e6ed;
+            --white: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* Global Reset & Typography */
+        /* =========================================
+           Global Reset & High-Tech Background
+           ========================================= */
         * {
             margin: 0;
             padding: 0;
@@ -34,10 +38,21 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--white);
+            color: var(--text-light);
+            background-color: var(--bg-dark);
+            /* Futuristic Grid Background */
+            background-image: 
+                linear-gradient(rgba(9, 115, 186, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(9, 115, 186, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        h1, h2, h3, .nav-links a, .btn-primary {
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         a {
@@ -51,16 +66,67 @@
             padding: 0 20px;
         }
 
-        /* Header & Navigation */
+        /* =========================================
+           Pre-Loader Animations
+           ========================================= */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-dark);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-ring {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: var(--neon-cyan);
+            border-bottom-color: var(--primary-blue);
+            animation: spin 1.5s linear infinite;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+        }
+
+        .loader-ring::before {
+            content: '';
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-left-color: var(--neon-cyan);
+            animation: spin 1s linear infinite reverse;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loaded-content {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.2s;
+        }
+
+        /* =========================================
+           Header & Glassmorphism Navigation
+           ========================================= */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(5, 5, 8, 0.85);
+            backdrop-filter: blur(15px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(9, 115, 186, 0.3);
             padding: 15px 0;
+            box-shadow: 0 0 20px rgba(9, 115, 186, 0.1);
         }
 
         .nav-wrapper {
@@ -71,7 +137,8 @@
 
         .logo img {
             max-height: 60px;
-            width: auto;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+            animation: pulseGlow 3s infinite alternate;
         }
 
         .nav-links {
@@ -81,62 +148,110 @@
         }
 
         .nav-links a {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-light);
             transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--neon-cyan);
+            transition: var(--transition);
+            box-shadow: 0 0 10px var(--neon-cyan);
         }
 
         .nav-links a:hover {
-            color: var(--primary-blue);
+            color: var(--neon-cyan);
+            text-shadow: 0 0 8px var(--neon-cyan);
         }
 
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* =========================================
+           High-Tech Buttons
+           ========================================= */
         .btn-primary {
-            background: var(--primary-blue);
-            color: var(--white);
+            background: transparent;
+            color: var(--neon-cyan);
             padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-block;
             transition: var(--transition);
-            border: 2px solid var(--primary-blue);
+            border: 1px solid var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), inset 0 0 10px rgba(0, 229, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
         }
 
         .btn-primary:hover {
-            background: transparent;
-            color: var(--primary-blue);
+            background: var(--neon-cyan);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 10px var(--white);
+            transform: translateY(-2px);
         }
 
-        /* Hero Section */
+        /* =========================================
+           Hero Section
+           ========================================= */
         .hero {
-            padding: 180px 0 100px;
-            background: linear-gradient(135deg, #f0f7fb 0%, #ffffff 100%);
+            padding: 220px 0 120px;
             text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(9, 115, 186, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            animation: pulseGlow 4s infinite alternate;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             font-weight: 800;
             margin-bottom: 20px;
-            color: var(--text-dark);
-            line-height: 1.2;
+            color: var(--white);
+            line-height: 1.1;
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+            animation: slideInDown 1s ease forwards 0.3s;
+            opacity: 0;
         }
 
         .hero h1 span {
-            color: var(--primary-blue);
+            color: var(--neon-cyan);
+            text-shadow: 0 0 20px var(--neon-cyan);
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 600px;
+            color: #aebacd;
+            max-width: 650px;
             margin: 0 auto 40px;
+            animation: fadeInUp 1s ease forwards 0.6s;
+            opacity: 0;
         }
 
-        /* Services Section */
+        /* =========================================
+           Animated Services Grid
+           ========================================= */
         .services {
-            padding: 100px 0;
-            background-color: var(--bg-light);
+            padding: 80px 0 120px;
         }
 
         .section-header {
@@ -145,48 +260,107 @@
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
-            color: var(--text-dark);
+            color: var(--white);
+            text-shadow: 0 0 15px rgba(255,255,255,0.2);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
 
         .service-card {
-            background: var(--white);
+            background: var(--bg-glass);
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(9, 115, 186, 0.3);
+            backdrop-filter: blur(10px);
             transition: var(--transition);
-            border-top: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.8s;
+        }
+
+        .service-card::before, .service-card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .service-card::before {
+            top: 0; left: 0;
+            border-top-color: var(--primary-blue);
+            border-left-color: var(--primary-blue);
+        }
+
+        .service-card::after {
+            bottom: 0; right: 0;
+            border-bottom-color: var(--primary-blue);
+            border-right-color: var(--primary-blue);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            border-top: 4px solid var(--primary-blue);
-            box-shadow: 0 15px 40px rgba(9, 115, 186, 0.1);
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15), inset 0 0 20px rgba(0, 229, 255, 0.05);
+        }
+
+        .service-card:hover::before, .service-card:hover::after {
+            border-color: var(--neon-cyan);
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
         }
 
         .service-card i {
-            font-size: 2.5rem;
-            color: var(--primary-blue);
+            font-size: 3rem;
+            color: var(--neon-cyan);
             margin-bottom: 20px;
+            text-shadow: 0 0 15px var(--neon-cyan);
+            transition: var(--transition);
+        }
+
+        .service-card:hover i {
+            transform: scale(1.1);
         }
 
         .service-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 15px;
-            font-weight: 600;
+            font-weight: 700;
+            color: var(--white);
         }
 
-        /* Footer */
+        /* =========================================
+           Global Animations
+           ========================================= */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulseGlow {
+            from { opacity: 0.6; filter: brightness(1); }
+            to { opacity: 1; filter: brightness(1.3); }
+        }
+
+        /* =========================================
+           Footer
+           ========================================= */
         footer {
-            background: var(--text-dark);
-            color: var(--white);
+            background: #020203;
+            border-top: 1px solid rgba(9, 115, 186, 0.3);
             padding: 60px 0 30px;
         }
 
@@ -204,9 +378,9 @@
         }
 
         .footer-links h4 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 20px;
-            color: var(--primary-blue);
+            color: var(--neon-cyan);
         }
 
         .footer-links ul {
@@ -218,119 +392,142 @@
         }
 
         .footer-links ul li a {
-            color: #b3b3b3;
+            color: #aebacd;
             transition: var(--transition);
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .footer-links ul li a:hover {
-            color: var(--white);
+            color: var(--neon-cyan);
+            text-shadow: 0 0 5px var(--neon-cyan);
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #b3b3b3;
+            border-top: 1px dashed rgba(255,255,255,0.1);
+            color: #555;
             font-size: 0.9rem;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Add a hamburger menu for mobile */
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.8rem; }
+            .hero { padding: 150px 0 80px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header>
-        <div class="container nav-wrapper">
-            <a href="/" class="logo">
-                <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-            <a href="#contact" class="btn-primary">Get a Quote</a>
-        </div>
-    </header>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-ring"></div>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>We Transform Your Ideas Into <span>Digital Reality</span></h1>
-            <p>Schramm Ad Labs is a premium digital marketing agency offering coherent and bespoke marketing services for brands ready to scale.</p>
-            <a href="#services" class="btn-primary">Explore Our Services</a>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Expertise</h2>
-                <p>ROI-Driven Growth strategies tailored to your unique business needs.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <h3>Search Engine Optimization</h3>
-                    <p>Drive organic traffic with our advanced keyword optimization, backlink building, and technical SEO indexing strategies.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-bullhorn"></i>
-                    <h3>Digital Marketing Strategy</h3>
-                    <p>Comprehensive communication campaigns that seamlessly align with your brand's overarching marketing goals.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-laptop-code"></i>
-                    <h3>Web & Content Development</h3>
-                    <p>Clever, skillful developers ensuring the creation of state-of-the-art web-based products optimized for conversions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-logo">
+    <!-- Wrapped Content for Entrance Animation -->
+    <div class="loaded-content">
+        
+        <!-- Header / Navigation -->
+        <header>
+            <div class="container nav-wrapper">
+                <a href="/" class="logo">
                     <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
-                    <p>Your trusted partner for transformative digital growth.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">SEO Optimization</a></li>
-                        <li><a href="#">PPC Management</a></li>
-                        <li><a href="#">Social Media Marketing</a></li>
-                        <li><a href="#">Web Development</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#">System.Home</a></li>
+                    <li><a href="#services">Modules.Services</a></li>
+                    <li><a href="#">Data.Portfolio</a></li>
+                    <li><a href="#">Core.About</a></li>
+                </ul>
+                <a href="#contact" class="btn-primary">Get a Quote</a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Schramm Ad Labs. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </header>
 
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>We Transform Your Ideas Into <span>Digital Reality</span></h1>
+                <p>Schramm Ad Labs is a premium digital marketing agency offering coherent and bespoke marketing services for brands ready to scale.</p>
+                <a href="#services" class="btn-primary">Explore Our Services</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Expertise</h2>
+                    <p style="color: #aebacd;">ROI-Driven Growth strategies tailored to your unique business needs.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card" style="animation-delay: 0.6s;">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h3>Search Engine Optimization</h3>
+                        <p>Drive organic traffic with our advanced keyword optimization, backlink building, and technical SEO indexing strategies.</p>
+                    </div>
+                    <div class="service-card" style="animation-delay: 0.8s;">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <h3>Digital Marketing Strategy</h3>
+                        <p>Comprehensive communication campaigns that seamlessly align with your brand's overarching marketing goals.</p>
+                    </div>
+                    <div class="service-card" style="animation-delay: 1.0s;">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <h3>Web & Content Development</h3>
+                        <p>Clever, skillful developers ensuring the creation of state-of-the-art web-based products optimized for conversions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-logo">
+                        <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
+                        <p style="margin-top: 15px; color: #aebacd;">Your trusted partner for transformative digital growth.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">SEO Optimization</a></li>
+                            <li><a href="#">PPC Management</a></li>
+                            <li><a href="#">Social Media Marketing</a></li>
+                            <li><a href="#">Web Development</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Schramm Ad Labs. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript to Handle Preloader -->
+    <script>
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(function() {
+                preloader.style.opacity = '0';
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500); 
+            }, 800);
+        });
+    </script>
 </body>
 </html>
