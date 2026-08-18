@@ -12,21 +12,32 @@
     <div id="preloader"><div class="loader-ring"></div></div>
 
     <div class="loaded-content">
-        <!-- Header -->
+        <!-- Header / Navigation -->
         <header>
             <div class="container nav-wrapper">
-                <a href="index.html" class="logo"><img src="image_33197f.png" alt="Schramm Ad Labs"></a>
+                <a href="index.html" class="logo">
+                    <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
+                </a>
+                
+                <!-- Mobile Menu Hamburger Icon -->
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html" data-text="Home">Home</a></li>
+                    <li><a href="services.html" data-text="Services">Services</a></li>
+                    <li><a href="portfolio.html" data-text="Portfolio">Portfolio</a></li>
+                    <li><a href="about.html" data-text="About">About</a></li>
+                    <li>
+                        <a href="contact.html" class="btn-primary">
+                            Get a Quote <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
                 </ul>
-                <a href="contact.html" class="btn-primary">Get a Quote</a>
             </div>
         </header>
 
-        <!-- Page Header -->
         <section class="page-header">
             <div class="container">
                 <h1>Join the Network</h1>
@@ -34,14 +45,12 @@
             </div>
         </section>
 
-        <!-- Open Positions Grid -->
         <section class="content-section">
             <div class="container">
                 <div class="section-header">
                     <h2>Open Directives</h2>
                 </div>
                 <div class="grid">
-                    <!-- Job 1 -->
                     <div class="service-card">
                         <i class="fa-solid fa-code" style="font-size: 2rem; margin-bottom: 10px;"></i>
                         <h3>Senior Web Engineer</h3>
@@ -49,7 +58,6 @@
                         <p style="margin-bottom: 25px; color: var(--text-light);">Architect and deploy high-performance interactive frameworks for enterprise clients.</p>
                         <a href="contact.html" class="btn-primary" style="padding: 10px 20px;">Initialize Application</a>
                     </div>
-                    <!-- Job 2 -->
                     <div class="service-card">
                         <i class="fa-solid fa-magnifying-glass-chart" style="font-size: 2rem; margin-bottom: 10px;"></i>
                         <h3>Algorithm Optimizer (SEO)</h3>
@@ -57,7 +65,6 @@
                         <p style="margin-bottom: 25px; color: var(--text-light);">Lead data-driven strategies to manipulate search indices and drive exponential organic growth.</p>
                         <a href="contact.html" class="btn-primary" style="padding: 10px 20px;">Initialize Application</a>
                     </div>
-                    <!-- Job 3 -->
                     <div class="service-card">
                         <i class="fa-solid fa-crosshairs" style="font-size: 2rem; margin-bottom: 10px;"></i>
                         <h3>Performance Marketer</h3>
@@ -69,7 +76,6 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer>
             <div class="container">
                 <div class="footer-grid">
