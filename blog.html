@@ -30,17 +30,29 @@
     <div id="preloader"><div class="loader-ring"></div></div>
 
     <div class="loaded-content">
-        <!-- Header -->
+        <!-- Header / Navigation -->
         <header>
             <div class="container nav-wrapper">
-                <a href="index.html" class="logo"><img src="image_33197f.png" alt="Schramm Ad Labs"></a>
+                <a href="index.html" class="logo">
+                    <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
+                </a>
+                
+                <!-- Mobile Menu Hamburger Icon -->
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html" data-text="Home">Home</a></li>
+                    <li><a href="services.html" data-text="Services">Services</a></li>
+                    <li><a href="portfolio.html" data-text="Portfolio">Portfolio</a></li>
+                    <li><a href="about.html" data-text="About">About</a></li>
+                    <li>
+                        <a href="contact.html" class="btn-primary">
+                            Get a Quote <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
                 </ul>
-                <a href="contact.html" class="btn-primary">Get a Quote</a>
             </div>
         </header>
 
@@ -56,7 +68,6 @@
         <section class="content-section">
             <div class="container">
                 <div class="grid">
-                    <!-- Blog Post 1 -->
                     <div class="service-card">
                         <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog Image" class="blog-img">
                         <span class="meta-text"><i class="fa-regular fa-calendar"></i> August 12, 2026</span>
@@ -64,7 +75,6 @@
                         <p style="margin-bottom: 20px; color: var(--text-light);">Discover how artificial intelligence is reshaping algorithm optimization and what it means for your digital presence.</p>
                         <a href="blog.html" class="btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Read Protocol</a>
                     </div>
-                    <!-- Blog Post 2 -->
                     <div class="service-card">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog Image" class="blog-img">
                         <span class="meta-text"><i class="fa-regular fa-calendar"></i> July 28, 2026</span>
@@ -72,7 +82,6 @@
                         <p style="margin-bottom: 20px; color: var(--text-light);">A deep dive into programmatic advertising strategies that lower CPC while driving high-quality conversions.</p>
                         <a href="blog.html" class="btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Read Protocol</a>
                     </div>
-                    <!-- Blog Post 3 -->
                     <div class="service-card">
                         <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog Image" class="blog-img">
                         <span class="meta-text"><i class="fa-regular fa-calendar"></i> July 15, 2026</span>
