@@ -9,25 +9,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Light Theme Preloader -->
     <div id="preloader"><div class="loader-ring"></div></div>
 
     <div class="loaded-content">
         <!-- Header / Navigation -->
         <header>
             <div class="container nav-wrapper">
-                <a href="index.html" class="logo"><img src="image_33197f.png" alt="Schramm Ad Labs"></a>
+                <a href="index.html" class="logo">
+                    <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
+                </a>
+                
+                <!-- Mobile Menu Hamburger Icon -->
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html" data-text="Home">Home</a></li>
+                    <li><a href="services.html" data-text="Services">Services</a></li>
+                    <li><a href="portfolio.html" data-text="Portfolio">Portfolio</a></li>
+                    <li><a href="about.html" data-text="About">About</a></li>
+                    <li>
+                        <a href="contact.html" class="btn-primary">
+                            Get a Quote <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
                 </ul>
-                <a href="contact.html" class="btn-primary">Get a Quote</a>
             </div>
         </header>
 
-        <!-- Thank You Content -->
         <section class="content-section" style="padding-top: 180px; min-height: 70vh; display: flex; align-items: center;">
             <div class="container" style="width: 100%;">
                 <div class="service-card" style="text-align: center; max-width: 600px; margin: 0 auto; padding: 60px 40px;">
@@ -41,7 +51,6 @@
             </div>
         </section>
 
-        <!-- Light Footer -->
         <footer>
             <div class="container">
                 <div class="footer-grid">
@@ -74,8 +83,6 @@
             </div>
         </footer>
     </div>
-
-    <!-- JavaScript to Handle Preloader -->
     <script src="app.js"></script>
 </body>
 </html>
