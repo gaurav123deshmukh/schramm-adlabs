@@ -5,332 +5,100 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
     <title>Contact | Schramm Ad Labs</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-
-    <style>
-        /* CSS Variables - High Tech Light Theme */
-        :root {
-            --primary-blue: #0973BA;
-            --tech-accent: #00d0ff;
-            --text-dark: #1A1A1A;
-            --text-light: #5A5A5A;
-            --bg-light: #F8F9FA;
-            --white: #FFFFFF;
-            --border-light: rgba(9, 115, 186, 0.15);
-            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Animated High-Tech Spatial Background Grid */
-        body::before {
-            content: "";
-            position: fixed;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background-image: 
-                linear-gradient(rgba(9, 115, 186, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(9, 115, 186, 0.04) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -1;
-            animation: panGrid 40s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes panGrid {
-            0% { transform: translateY(0) translateX(0); }
-            100% { transform: translateY(50px) translateX(50px); }
-        }
-
-        h1, h2, h3, h4 { font-family: 'Rajdhani', sans-serif; letter-spacing: 0.5px; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
-
-        /* Pre-Loader Animations */
-        #preloader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: var(--white); z-index: 9999;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            transition: opacity 0.5s ease;
-        }
-
-        .loader-ring {
-            width: 100px; height: 100px; border-radius: 50%; border: 3px solid transparent;
-            border-top-color: var(--primary-blue); border-bottom-color: var(--tech-accent);
-            animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite; position: relative;
-        }
-
-        .loader-ring::before {
-            content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
-            border-radius: 50%; border: 3px solid transparent; border-left-color: var(--primary-blue);
-            animation: spin 0.8s linear infinite reverse;
-        }
-
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px);
-            position: fixed; width: 100%; top: 0; z-index: 1000;
-            border-bottom: 1px solid var(--border-light); padding: 15px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-        }
-
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { max-height: 55px; width: auto; transition: var(--transition); }
-        .logo img:hover { transform: scale(1.05) rotate(-2deg); filter: drop-shadow(0 0 15px rgba(9, 115, 186, 0.3)); }
-        
-        .nav-links { display: flex; gap: 35px; list-style: none; }
-        .nav-links a {
-            font-family: 'Rajdhani', sans-serif; text-transform: uppercase; font-weight: 700;
-            font-size: 1.05rem; color: var(--text-dark); transition: var(--transition);
-            position: relative; overflow: hidden; display: inline-block; padding: 5px 0;
-        }
-
-        .nav-links a::before {
-            content: attr(data-text); position: absolute; top: 100%; left: 0;
-            color: var(--primary-blue); transition: var(--transition);
-        }
-
-        .nav-links a:hover, .nav-links a.active { color: transparent; }
-        .nav-links a:hover::before, .nav-links a.active::before { top: 0; color: var(--primary-blue); }
-
-        /* Cyber Scan Buttons */
-        .btn-primary {
-            font-family: 'Rajdhani', sans-serif; text-transform: uppercase;
-            background: var(--primary-blue); color: var(--white); padding: 12px 30px;
-            font-weight: 700; display: inline-flex; align-items: center; gap: 10px;
-            transition: var(--transition); border: 1px solid var(--primary-blue);
-            position: relative; overflow: hidden; clip-path: polygon(10% 0, 100% 0, 100% 75%, 90% 100%, 0 100%, 0 25%);
-            z-index: 1; cursor: pointer;
-        }
-
-        .btn-primary::before {
-            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transform: skewX(-20deg); transition: 0.5s ease; z-index: -1;
-        }
-
-        .btn-primary:hover {
-            background: var(--white); color: var(--primary-blue);
-            transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 35px rgba(9, 115, 186, 0.3);
-        }
-        .btn-primary:hover::before { left: 150%; }
-
-        /* Page Header */
-        .page-header {
-            padding: 180px 0 80px; text-align: center;
-            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.9) 0%, transparent 100%);
-            border-bottom: 1px solid var(--border-light);
-            position: relative;
-        }
-        .page-header h1 { font-size: 4rem; font-weight: 800; color: var(--text-dark); margin-bottom: 15px; }
-        .page-header p { font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto; min-height: 30px;}
-
-        /* Scroll Reveal */
-        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* Contact Section */
-        .content-section { padding: 80px 0; background-color: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px); }
-        
-        .contact-card {
-            background: rgba(255, 255, 255, 0.9); padding: 50px 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-            border: 1px solid var(--border-light); border-radius: 12px; position: relative; overflow: hidden; z-index: 1;
-            max-width: 750px; margin: 0 auto; transition: var(--transition);
-        }
-        
-        .contact-card::before, .contact-card::after {
-            content: ''; position: absolute; width: 30px; height: 30px; border: 3px solid transparent; transition: var(--transition);
-        }
-        .contact-card::before { top: 0; left: 0; border-top-color: var(--primary-blue); border-left-color: var(--primary-blue); }
-        .contact-card::after { bottom: 0; right: 0; border-bottom-color: var(--primary-blue); border-right-color: var(--primary-blue); }
-        
-        .contact-card:hover { border-color: rgba(9, 115, 186, 0.3); box-shadow: 0 20px 50px rgba(9, 115, 186, 0.08); }
-
-        .contact-form { display: flex; flex-direction: column; gap: 20px; }
-        .contact-form input, .contact-form textarea {
-            background: var(--white); border: 1px solid var(--border-light); padding: 15px 20px;
-            color: var(--text-dark); font-family: 'Inter', sans-serif; font-size: 1rem;
-            outline: none; transition: var(--transition); border-radius: 4px;
-        }
-        .contact-form input:focus, .contact-form textarea:focus { 
-            border-color: var(--primary-blue); box-shadow: 0 0 15px rgba(9, 115, 186, 0.1); 
-        }
-        .contact-form textarea { resize: none; height: 160px; }
-
-        /* Footer */
-        footer { background: var(--white); border-top: 1px solid var(--border-light); padding: 60px 0 30px; position: relative; z-index: 2; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .footer-logo img { max-height: 50px; margin-bottom: 20px; transition: var(--transition); }
-        .footer-logo img:hover { transform: scale(1.05); }
-        .footer-links h4 { font-family: 'Rajdhani', sans-serif; font-size: 1.2rem; margin-bottom: 20px; color: var(--primary-blue); text-transform: uppercase; }
-        .footer-links ul { list-style: none; }
-        .footer-links ul li { margin-bottom: 10px; }
-        .footer-links ul li a { color: var(--text-light); transition: var(--transition); position: relative; padding-left: 0; }
-        .footer-links ul li a::before { content: '>'; position: absolute; left: -15px; opacity: 0; color: var(--primary-blue); transition: var(--transition); }
-        .footer-links ul li a:hover { color: var(--primary-blue); padding-left: 15px; }
-        .footer-links ul li a:hover::before { opacity: 1; left: 0; }
-        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px dashed var(--border-light); font-size: 0.9rem; color: var(--text-light); }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .page-header h1 { font-size: 3rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Light Theme Animated Preloader -->
     <div id="preloader">
         <div class="loader-ring"></div>
-        <div style="margin-top: 20px; font-family: 'Rajdhani', sans-serif; font-weight: 700; color: var(--primary-blue); letter-spacing: 2px;">
-            ESTABLISHING CONNECTION_
-        </div>
+        <div style="margin-top: 20px; font-family: 'Rajdhani', sans-serif; font-weight: 700; color: var(--primary-blue); letter-spacing: 2px;">ESTABLISHING CONNECTION_</div>
     </div>
 
-    <!-- Header / Navigation -->
-    <header>
-        <div class="container nav-wrapper">
-            <a href="index.html" class="logo">
-                <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html" data-text="Home">Home</a></li>
-                <li><a href="services.html" data-text="Services">Services</a></li>
-                <li><a href="portfolio.html" data-text="Portfolio">Portfolio</a></li>
-                <li><a href="about.html" data-text="About">About</a></li>
-            </ul>
-            <a href="contact.html" class="btn-primary">
-                Get a Quote <i class="fa-solid fa-arrow-right"></i>
-            </a>
-        </div>
-    </header>
+    <div class="loaded-content">
+        <!-- Header / Navigation -->
+        <header>
+            <div class="container nav-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
+                </a>
+                
+                <!-- Mobile Menu Hamburger Icon -->
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="reveal">Transmission Uplink</h1>
-            <p id="typewriter-text" class="reveal" style="transition-delay: 0.2s;"></p>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="contact-card reveal">
-                <!-- Redirects to thank-you.html upon submission -->
-                <form class="contact-form" action="thank-you.html">
-                    <input type="text" placeholder="Designation (Your Name) *" required>
-                    <input type="email" placeholder="Network Address (Your Email) *" required>
-                    <input type="text" placeholder="Subject Vector" required>
-                    <textarea placeholder="Transmit Data Payload (Your Requirements)... *" required></textarea>
-                    
-                    <button type="submit" class="btn-primary" style="align-self: flex-start; margin-top: 10px;">
-                        Initiate Transfer <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </form>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-text="Home">Home</a></li>
+                    <li><a href="services.html" data-text="Services">Services</a></li>
+                    <li><a href="portfolio.html" data-text="Portfolio">Portfolio</a></li>
+                    <li><a href="about.html" data-text="About">About</a></li>
+                    <li>
+                        <a href="contact.html" class="btn-primary">
+                            Get a Quote <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-logo reveal">
-                    <a href="index.html">
-                        <img src="image_33197f.png" alt="Schramm Ad Labs Logo">
-                    </a>
-                    <p style="color: var(--text-light); margin-top: 10px;">Your trusted partner for transformative digital growth.</p>
-                </div>
-                <div class="footer-links reveal" style="transition-delay: 0.2s;">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">SEO Optimization</a></li>
-                        <li><a href="services.html">PPC Management</a></li>
-                        <li><a href="services.html">Social Media Marketing</a></li>
-                        <li><a href="services.html">Web Development</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links reveal" style="transition-delay: 0.3s;">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="reveal">Transmission Uplink</h1>
+                <p id="typewriter-text" class="reveal" style="transition-delay: 0.2s;"></p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="contact-card reveal">
+                    <form class="contact-form" action="thank-you.html">
+                        <input type="text" placeholder="Designation (Your Name) *" required>
+                        <input type="email" placeholder="Network Address (Your Email) *" required>
+                        <input type="text" placeholder="Subject Vector" required>
+                        <textarea placeholder="Transmit Data Payload (Your Requirements)... *" required></textarea>
+                        <button type="submit" class="btn-primary" style="align-self: flex-start; margin-top: 10px;">
+                            Initiate Transfer <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Schramm Ad Labs. All Rights Reserved.</p>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-logo reveal">
+                        <a href="index.html"><img src="image_33197f.png" alt="Schramm Ad Labs Logo"></a>
+                        <p style="color: var(--text-light); margin-top: 10px;">Your trusted partner for transformative digital growth.</p>
+                    </div>
+                    <div class="footer-links reveal" style="transition-delay: 0.2s;">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="services.html">SEO Optimization</a></li>
+                            <li><a href="services.html">PPC Management</a></li>
+                            <li><a href="services.html">Social Media Marketing</a></li>
+                            <li><a href="services.html">Web Development</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links reveal" style="transition-delay: 0.3s;">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Schramm Ad Labs. All Rights Reserved.</p>
+                </div>
             </div>
-        </div>
-    </footer>
-
-    <script>
-        window.addEventListener('load', function() {
-            // 1. Handle Preloader
-            const preloader = document.getElementById('preloader');
-            setTimeout(function() {
-                preloader.style.opacity = '0';
-                setTimeout(function() {
-                    preloader.style.display = 'none';
-                    typeWriter();
-                }, 500); 
-            }, 800);
-
-            // 2. Active Link
-            const currentLocation = location.href;
-            const menuItem = document.querySelectorAll('.nav-links a');
-            for (let i = 0; i < menuItem.length; i++) {
-                if (menuItem[i].href === currentLocation) {
-                    menuItem[i].classList.add("active");
-                }
-            }
-
-            // 3. Scroll Reveal Observer
-            function reveal() {
-                const reveals = document.querySelectorAll(".reveal");
-                for (let i = 0; i < reveals.length; i++) {
-                    const windowHeight = window.innerHeight;
-                    const elementTop = reveals[i].getBoundingClientRect().top;
-                    const elementVisible = 80;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveals[i].classList.add("active");
-                    }
-                }
-            }
-            window.addEventListener("scroll", reveal);
-            reveal(); 
-        });
-
-        // 4. Typewriter Subtitle
-        const text = "Establish a secure connection with our grid and scale your enterprise.";
-        let charIndex = 0;
-        const speed = 35; 
-        const typeTarget = document.getElementById("typewriter-text");
-
-        function typeWriter() {
-            if (typeTarget && charIndex < text.length) {
-                typeTarget.innerHTML += text.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeWriter, speed);
-            }
-        }
-    </script>
+        </footer>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
